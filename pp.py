@@ -1,12 +1,11 @@
 def compare(word1, word2, register=True, spaces=True):
-    if register == False and spaces == False:
-        return word1.upper().strip() == word2.upper().strip()
-    elif register == True and spaces == False:
-        return word1.strip() == word2.strip()
-    elif register == False and spaces == True:
-        return word1.upper() == word2.upper()
-    else:
-        return word1 == word2
+    if register == False:
+        word1 = word1.upper()
+        word2 = word2.upper()
+    if spaces == False:
+        word1 = word1.strip()
+        word2 = word2.strip()
+    print(word1 == word2)
 
 
 s1 = '  Treant   '
