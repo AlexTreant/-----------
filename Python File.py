@@ -1,11 +1,47 @@
-a = 1
-while a < 10:
-    a += 1
+import time
 
 
-def show_me_message(msg):
+def get_nod(a, b):
+    """
+    Нахождение наибольшего общего делителя из {a} и {b}
+    """
+    while a != b:
+        if a < b:
+            a, b = b, a
+        a -= b
+    return a
 
-    print(msg)
+# Тест 1
+def test1(func):
+    a, b = 81, 90
+    res = func(a, b)
+    if res == 9:
+        print('test 1 - ok')
+    else:
+        print('test 1 - failed')
+
+# Тест 2
+def test2(func):
+    a, b = 1, 90
+    res = func(a, b)
+    if res == 1:
+        print('test 2 - ok')
+    else:
+        print('test 2 - failed')
 
 
-show_me_message('Привет')
+
+# Тест 3
+def test3(func):
+    a, b = 1, 90000000
+    start_timer = time.time()
+    res = func(a, b)
+    end_timer = time.time()
+    if res == 1 and end_timer - start_timer < 1:
+        print('test 3 - ok')
+    else:
+        print('test 3 - failed')
+
+test1(get_nod)
+test2(get_nod)
+test3(get_nod)
