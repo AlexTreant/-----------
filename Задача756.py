@@ -34,7 +34,6 @@ def verify(lst):
     flag = True
     for i in range(len(lst) - 1):
         for j in range(len(lst[i]) - 1):
-            a, b, c, d = lst[i][j], lst[i][j+1], lst[i+1][j], lst[i+1][j+1]
             if lst[i][j] + lst[i][j+1] + lst[i+1][j] + lst[i+1][j+1] > 1:
                 flag = False
                 break
