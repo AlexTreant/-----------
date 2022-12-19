@@ -14,3 +14,6 @@ compare(s1, s2)
 compare(s1, s2, register=False)
 compare(s1, s2, spaces=False)
 compare(s1, s2, register=False, spaces=False)
+
+
+print('test')
